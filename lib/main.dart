@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Sales PO',
+      title: 'Sales POS',
       theme: lightTheme,
       darkTheme: darkTheme,
       getPages: Routes.routes,
