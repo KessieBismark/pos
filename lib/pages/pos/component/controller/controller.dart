@@ -469,6 +469,7 @@ class POSCon extends GetxController {
         sql =
             "INSERT INTO `sales_details`(`service_id`,`sales_id`, `price`,quantity,sub_total) VALUES ('${items[i].serviceId}','$id','${items[i].price}','${productQuantity(items[i])}','${productQuantity(items[i]) * double.parse(items[i].price)}');";
         var query = {"action": "save_cart", "sql": sql};
+        // ignore: unused_local_variable
         var val = await Query.queryData(query);
       }
       if (isBook.value) {

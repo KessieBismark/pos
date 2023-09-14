@@ -7,6 +7,7 @@ import 'services/utils/themes.dart';
 
 void main() async {
   await GetStorage.init();
+  // ignore: unused_local_variable
   ThemeController thenmes = Get.put(ThemeController());
   runApp(const MyApp());
 }
