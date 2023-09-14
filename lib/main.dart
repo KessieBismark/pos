@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       getPages: Routes.routes,
-      themeMode: ThemeMode.system,
       initialRoute: '/auth',
       defaultTransition: Transition.fadeIn,
     );

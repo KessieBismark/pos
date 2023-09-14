@@ -1,3 +1,6 @@
+import 'package:url_launcher/url_launcher.dart';
+
+import '../../services/constants/server.dart';
 import '../../services/widgets/extension.dart';
 import '../../services/widgets/keyboard_listener.dart';
 import 'package:flutter/cupertino.dart';
@@ -147,14 +150,39 @@ class Login extends GetView<LoginController> {
                                 // Explicitly setting delay overrides the inherited value.
                                 // This move effect will run BEFORE the initial fade:
                                 .move(delay: 0.ms)
-                            : const MWaiting())
+                            : const MWaiting()),
                       ],
+                    ),
+                    InkWell(
+                      child: "Download setup for windows".toAutoLabel(
+                          color: const Color.fromARGB(182, 75, 184, 187)),
+                      onTap: () => _launchURL(),
                     )
+                        .vMargin9
+                        .animate()
+                        .fadeIn(delay: 580.ms, duration: 580.ms)
+                        .then() // sets own delay to 800ms (300+500)
+                        .slide(duration: 400.ms) // inherits the 800ms delay
+                        .then(
+                            delay: 200.ms) // sets delay to 1400ms (800+400+200)
+                        // inherits the 1400ms delay
+                        // Explicitly setting delay overrides the inherited value.
+                        // This move effect will run BEFORE the initial fade:
+                        .move(delay: 0.ms)
                   ],
                 ),
               ),
             ).padding9.card.center,
           ),
         ));
+  }
+
+  _launchURL() async {
+    const url = Api.exeUrl;
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url));
+    } else {
+      throw 'Could not launch download link';
+    }
   }
 }

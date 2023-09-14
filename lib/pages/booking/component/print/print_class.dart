@@ -1,12 +1,13 @@
 import 'dart:typed_data';
-import '../../../../services/utils/helpers.dart';
+
 import 'package:flutter/widgets.dart';
-import 'package:pdf/widgets.dart' as pw;
 import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
 import '../../../../services/constants/constant.dart';
 import '../../../../services/utils/company_details.dart';
+import '../../../../services/utils/helpers.dart';
 import '../model.dart';
 
 class SalesReceipt {

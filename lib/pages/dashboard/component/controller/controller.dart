@@ -26,7 +26,6 @@ class DashCon extends GetxController {
   @override
   void onInit() {
     super.onInit();
-
     Utils.checkAccess();
     reload();
   }

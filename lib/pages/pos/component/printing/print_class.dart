@@ -1,14 +1,14 @@
 import 'dart:typed_data';
-import '../controller/controller.dart';
 
-import '../../../../services/utils/helpers.dart';
 import 'package:flutter/widgets.dart';
-import 'package:pdf/widgets.dart' as pw;
 import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
 import '../../../../services/constants/constant.dart';
 import '../../../../services/utils/company_details.dart';
+import '../../../../services/utils/helpers.dart';
+import '../controller/controller.dart';
 
 class SalesReceipt {
   final BuildContext context;
@@ -249,15 +249,15 @@ class ProformalReceipt {
               pw.SizedBox(height: 10),
               invoiceLayer(),
               pw.SizedBox(
-                height: 20,
+                height: 10,
               ),
               printTable(context, number),
               pw.SizedBox(
-                height: 20,
+                height: 10,
               ),
               amountDetails(),
               pw.SizedBox(
-                height: 50,
+                height: 20,
               ),
               pw.Align(
                 alignment: pw.Alignment.center,
@@ -292,7 +292,7 @@ class ProformalReceipt {
         ),
         pw.Align(
           alignment: pw.Alignment.bottomRight,
-          child: pw.Text("Dsicount: $discount"),
+          child: pw.Text("Discount: $discount"),
         ),
         pw.Align(
           alignment: pw.Alignment.bottomRight,

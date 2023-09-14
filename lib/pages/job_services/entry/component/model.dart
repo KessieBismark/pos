@@ -6,7 +6,7 @@ class ServiceModel {
   final String? des;
   final String bid;
   final String? quantity;
-  final String? price;
+  final dynamic price;
   final dynamic cost;
   final String branch;
 
@@ -32,7 +32,7 @@ class ServiceModel {
         branch: map['branch'],
         des: map['description'] ?? '',
         quantity: map['quantity'] ?? '',
-        price: map['unit_price'] ?? '',
+        price: map['unit_price'],
         cost: map['cost']);
   }
 }

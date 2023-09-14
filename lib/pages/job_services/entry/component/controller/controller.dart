@@ -200,7 +200,6 @@ class ServiceEntryCon extends GetxController {
         "branch": Utils.userRole == 'Super Admin' ? branch : Utils.branchID
       };
       var result = await Query.queryData(data);
-      print(result);
       var res = json.decode(result);
       for (var res in res) {
         record.add(ServiceModel.fromJson(res));

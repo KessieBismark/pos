@@ -7,13 +7,13 @@ const String duplicate = "Record already stored in the database";
 const String notSaved = "Something happened, could not save record";
 const String infoNeeded = 'Please provide the required information to get data';
 const String emptyPrint = "There are no record to print.";
-const String companyName = "ROYAL FOAM GHANA LIMITED";
+const String companyName = "Asmiksoft Innovation";
 const String deleted = "Record has been deleted";
 const String exportError = "Exporting record was not successfull";
 const String export = "Record has been exported to Document with name:";
 const String numberOnly = "Entry must be numbers only";
 const String appName = "e3 Sales";
-const String appLink = "esales.bistechgh.com";
+const String appLink = "https://pos.bistechgh.com/";
 
 const double pdfFont = 8;
 const double pdfFontHeader = 8;

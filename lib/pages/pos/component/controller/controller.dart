@@ -1,12 +1,5 @@
 import 'dart:convert';
 
-import '../../../../services/utils/sms.dart';
-
-import '../../../../services/widgets/dropdown.dart';
-import '../../../../services/widgets/dropdowntext2.dart';
-import '../../../customers/component/controller/controller.dart';
-import '../../../job_services/entry/component/controller/controller.dart';
-import '../../../job_services/entry/component/model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -15,7 +8,12 @@ import 'package:intl/intl.dart';
 import '../../../../services/constants/constant.dart';
 import '../../../../services/utils/helpers.dart';
 import '../../../../services/utils/query.dart';
+import '../../../../services/widgets/dropdown.dart';
+import '../../../../services/widgets/dropdowntext2.dart';
 import '../../../branches/component/controller/controller.dart';
+import '../../../customers/component/controller/controller.dart';
+import '../../../job_services/entry/component/controller/controller.dart';
+import '../../../job_services/entry/component/model.dart';
 import '../model.dart';
 
 final cu = Get.find<CustomerCon>();
@@ -154,7 +152,7 @@ class POSCon extends GetxController {
         sList.add(SalesModel(
             id: ss[i].id,
             name: ss[i].name,
-            price: double.parse(ss[i].cost),
+            price: double.parse(ss[i].price),
             quantity: int.parse(ss[i].quantity!),
             sub: ss[i].sub));
         list.add(CartModel(
@@ -162,7 +160,7 @@ class POSCon extends GetxController {
             service: ss[i].name,
             sub: ss[i].sub,
             quantity: int.parse(ss[i].quantity!),
-            price: ss[i].cost,
+            price: ss[i].price,
             cat: ss[i].cat));
       }
       listS = list;
@@ -253,9 +251,7 @@ class POSCon extends GetxController {
   }
 
   void addProduct(CartModel order) {
-    
     if (_product.containsKey(order)) {
-
       _product[order] += 1;
     } else {
       _product[order] = 1;
@@ -316,7 +312,7 @@ class POSCon extends GetxController {
       if (cus.text.isNotEmpty) {
         if (sub.isNotEmpty && price.toString().isNotEmpty) {
           if (cart.any((element) => element.service == sales.text)) {
-            Utils().showError("Service already exist in cart");
+            Utils().showError("Item already exist in cart");
           } else {
             loading.value = true;
             cart.add(CartModel(
@@ -476,12 +472,11 @@ class POSCon extends GetxController {
         var val = await Query.queryData(query);
       }
       if (isBook.value) {
-       
       } else {
         meg =
             "You have made payment for items(s) that amount to ${Utils().formatPrice(payable)} on ${date.text}";
       }
-      Sms().sendSms(customerPhone, meg);
+      // Sms().sendSms(customerPhone, meg);
     } catch (e) {
       isBook.value = false;
       print(e);
