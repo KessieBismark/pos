@@ -38,7 +38,6 @@ Install Flutter dependencies: flutter pub get
 
 Set up the backend:
  - Clone the backend repository from https://github.com/KessieBismark/pos_server
- - Follow the instructions in the backend repository's README to set up the PHP server and database.
 
 
 Configure the Flutter app to point to your local backend server by modifying the appropriate configuration files.
