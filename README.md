@@ -1,18 +1,49 @@
-# pos
+# Point of Sale (POS) System
+A comprehensive Point of Sale (POS) application built with Flutter for the frontend and PHP for the backend. This system provides a seamless solution for managing sales, inventory, and customer transactions.
 
-A new Flutter project.
+Features
+ - User-friendly interface for cashiers and managers
+ - Product management (add, edit, delete products)
+ - Inventory tracking and management
+ - Sales recording and reporting
+ - Customer management
+ - Role-based access control
+ - Responsive design for desktop and mobile devices
 
-## Getting Started
+Technologies
+Frontend
+ - Flutter
+ - Dart
 
-This project is a starting point for a Flutter application.
+Backend
+ - PHP
+ - MySQL (or any other database)
 
-A few resources to get you started if this is your first Flutter project:
+Getting Started
+To run this project locally, follow these steps:
+Prerequisites
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Flutter SDK installed (check Flutter Installation Guide)
+A compatible IDE or code editor (e.g., Android Studio, Visual Studio Code)
+PHP server (e.g., Apache, Nginx)
+MySQL database (or any other database of your choice)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Installation
 
-- To get the codes to the backend and the database please visit https://github.com/KessieBismark/pos_server
+Clone the repository: git clone https://github.com/your-username/pos-system.git
+
+Change to the project directory: cd pos-system
+
+Install Flutter dependencies: flutter pub get
+
+Set up the backend:
+ - Clone the backend repository from https://github.com/KessieBismark/pos_server
+ - Follow the instructions in the backend repository's README to set up the PHP server and database.
+
+
+Configure the Flutter app to point to your local backend server by modifying the appropriate configuration files.
+
+Run the Flutter app:flutter run
+
+
+
