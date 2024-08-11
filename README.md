@@ -30,7 +30,7 @@ MySQL database (or any other database of your choice)
 
 Installation
 
-Clone the repository: git clone https://github.com/your-username/pos-system.git
+Clone the repository
 
 Change to the project directory: cd pos-system
 
